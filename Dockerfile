@@ -31,3 +31,5 @@ ENV PYTHONPATH=$PYTHONPATH:/root/codes/automl
 
 # clone automl
 WORKDIR /root/codes
+
+ENTRYPOINT [ "/bin/bash" ]
