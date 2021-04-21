@@ -24,3 +24,10 @@ RUN PYTHON_VERSION=3.8 /opt/conda/bin/conda install --update-all -y -c defaults 
 RUN pip install tensorflow
 # don't know why pip pytorch keep giving me connection reset.
 RUN /opt/conda/bin/conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c conda-forge
+
+WORKDIR /root/codes
+RUN git clone https://github.com/matthewygf/automl.git
+ENV PYTHONPATH=$PYTHONPATH:/root/codes/automl
+
+# clone automl
+WORKDIR /root/codes
