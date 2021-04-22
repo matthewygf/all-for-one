@@ -27,7 +27,12 @@ RUN /opt/conda/bin/conda install pytorch torchvision torchaudio cudatoolkit=11.1
 
 WORKDIR /root/codes
 RUN git clone https://github.com/matthewygf/automl.git
+RUN git clone https://github.com/matthewygf/yolov5.git
 ENV PYTHONPATH=$PYTHONPATH:/root/codes/automl
+
+RUN pip install pandas numpy
+
+RUN apt-get install ffmpeg libsm6 libxext6  -y
 
 # clone automl
 WORKDIR /root/codes

@@ -36,7 +36,7 @@ def main():
     detections = sess.run('detections:0', {'image_arrays:0': raw_images})
     driver = inference.ServingDriver('efficientdet-d1', 'efficient_det/ckpts/efficientdet-d1')
     for i, d in enumerate(detections):
-      img = driver.visualize(raw_images[i], detections[i])
+      img = driver.visualize(raw_images[i], detections[i], min_score_thresh=0.45)
       Image.fromarray(img).save(f"x{str(i)}.jpg")
 
 if __name__ == "__main__":
