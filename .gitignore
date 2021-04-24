@@ -3,3 +3,8 @@
 .vscode
 */ckpts
 *.jpg
+*.png
+*.json
+*.zip
+__pycache__
+*.pkl
